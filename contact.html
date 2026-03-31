@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Idol Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="contact.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <input
+                type="checkbox"
+                id="site-nav-toggle"
+                class="site-nav-toggle"
+            >
+            <label
+                for="site-nav-toggle"
+                class="hamburger"
+                aria-label="Menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Software</a>
+                <a href="#">Archive</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="body-container">
+        <h1 class="page-title">Contact</h1>
+        <section class="contact-card" aria-label="Contact form">
+            <form
+                class="contact-form"
+                action="https://submit-form.com/nq417uy6W"
+                method="POST"
+            >
+                <label class="visually-hidden" for="company">
+                    Company (leave blank)
+                </label>
+                <input
+                    class="visually-hidden"
+                    type="checkbox"
+                    id="company"
+                    name="_honeypot"
+                    tabindex="-1"
+                    autocomplete="off"
+                >
+
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Name"
+                        required
+                    >
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        required
+                    >
+                </div>
+
+                <input
+                    type="hidden"
+                    id="email-subject"
+                    name="_email.subject"
+                    value="[Contact] New message"
+                >
+
+                <div class="form-field">
+                    <label for="topic">What are you contacting about?</label>
+                    <select id="topic" name="topic" required>
+                        <option value="Rhyme Offline">Rhyme Offline</option>
+                        <option value="Other Inquiry">Other Inquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="inquiryType">Inquiry type</label>
+                    <select id="inquiryType" name="inquiryType" required>
+                        <option value="Bug Report">Bug Report</option>
+                        <option value="Feature Suggestion">Feature Suggestion</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Message"
+                        rows="7"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-field">
+                    <div
+                        class="g-recaptcha"
+                        data-sitekey="6LcU-J4sAAAAANp_nRkWhXwvJfX1ADHPRF-gFXNK"
+                        data-callback="onContactRecaptchaSuccess"
+                        data-expired-callback="onContactRecaptchaExpired"
+                    ></div>
+                </div>
+
+                <button class="primary-button" type="submit" disabled>Send</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
