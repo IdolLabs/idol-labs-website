@@ -17,6 +17,47 @@ body{
     padding: 0 1rem;
 }
 
+.home-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.25rem;
+}
+
+.home-logo-image {
+    width: min(18rem, 70vw);
+    height: auto;
+    max-height: 42vh;
+    display: block;
+}
+
+.home-logo + div h1 {
+    padding-top: 1.5rem;
+}
+
+@media (max-height: 44rem) {
+    .home-logo {
+        margin-top: 1.5rem;
+    }
+
+    .home-logo-image {
+        max-height: 34vh;
+        width: min(16rem, 70vw);
+    }
+
+    .home-logo + div h1 {
+        padding-top: 1.1rem;
+    }
+
+    h1 {
+        font-size: 3.25rem;
+        padding-top: 2rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+}
+
 h1 {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
