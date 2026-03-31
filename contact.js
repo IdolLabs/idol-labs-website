@@ -26,6 +26,21 @@
     return;
   }
 
+  const thankYouPageHref = new URL("contact-thanks.html", window.location.href)
+    .href;
+
+  const appendHidden = document.createElement("input");
+  appendHidden.type = "hidden";
+  appendHidden.name = "_append";
+  appendHidden.value = "false";
+  formEl.appendChild(appendHidden);
+
+  const redirectHidden = document.createElement("input");
+  redirectHidden.type = "hidden";
+  redirectHidden.name = "_redirect";
+  redirectHidden.value = thankYouPageHref;
+  formEl.appendChild(redirectHidden);
+
   const inquiryOptionsByTopic = {
     "Rhyme Offline": ["Bug Report", "Feature Suggestion", "General Inquiry"],
     "Other Inquiry": ["General Inquiry"],

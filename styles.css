@@ -320,6 +320,10 @@ header nav {
     background: rgba(68, 144, 254, 0.55);
 }
 
+.thank-you-card .thank-you-lead {
+    margin-top: 0;
+}
+
 .contact-note {
     margin-top: 1.25rem;
     color: rgba(255, 255, 255, 0.85);
