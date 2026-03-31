@@ -207,6 +207,33 @@ header nav {
     backdrop-filter: blur(10px);
 }
 
+.about-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 42rem;
+    margin: 2.5rem auto 4rem;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+}
+
+.about-card p {
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-card a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.about-card a:hover {
+    color: rgba(68, 144, 254, 0.95);
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
