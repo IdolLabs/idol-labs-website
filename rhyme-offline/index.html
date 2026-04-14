@@ -10,69 +10,34 @@
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet"
     >
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <input
-                type="checkbox"
-                id="site-nav-toggle"
-                class="site-nav-toggle"
-            >
-            <label
-                for="site-nav-toggle"
-                class="hamburger"
-                aria-label="Menu"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <div class="nav-links">
-                <a href="../index.html">Home</a>
-                <a href="../about.html">About</a>
-                <div class="nav-dropdown">
-                    <input
-                        type="checkbox"
-                        id="software-nav-toggle"
-                        class="software-nav-toggle"
-                    >
-                    <label
-                        for="software-nav-toggle"
-                        class="nav-dropdown-mobile-trigger"
-                    >
-                        Software
-                    </label>
-                    <button
-                        type="button"
-                        class="nav-dropdown-desktop-trigger"
-                    >
-                        Software
-                    </button>
-                    <div class="nav-dropdown-panel">
-                        <a href="index.html" aria-current="page">Rhyme Offline</a>
-                    </div>
-                </div>
-                <a href="../archive.html">Archive</a>
-                <a href="../contact.html">Contact</a>
-            </div>
-        </nav>
-    </header>
-
-    <main id="body-container">
-        <h1 class="page-title">Rhyme Offline</h1>
-        <section class="about-card" aria-label="About Rhyme Offline">
+<body class="rhyme-offline">
+    <main class="rhyme-offline-main" id="body-container">
+        <h1 class="rhyme-offline-title">Rhyme Offline</h1>
+        <section
+            class="rhyme-offline-card"
+            aria-label="About Rhyme Offline"
+        >
             <p>
                 Rhyme Offline is a rhyming dictionary app with perfect rhymes, slant rhymes,
                 definitions, a thesaurus, related words, and more. It works fully offline,
                 including in airplane mode, and is free with no ads.
             </p>
             <p>
-                Questions or feedback?
-                <a href="../contact.html">Contact Idol Labs</a>.
+                Questions or feedback? Use Contact below.
             </p>
         </section>
     </main>
+    <footer class="rhyme-offline-footer">
+        <nav class="rhyme-offline-footer-nav" aria-label="Legal and contact">
+            <a class="rhyme-offline-footer-link" href="privacy-policy.html">
+                Privacy Policy
+            </a>
+            <a class="rhyme-offline-footer-link" href="../contact.html">
+                Contact
+            </a>
+        </nav>
+    </footer>
 </body>
 </html>
