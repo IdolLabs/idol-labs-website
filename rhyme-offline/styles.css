@@ -10,42 +10,17 @@
     --color-primary: #456cba;
     --color-link: #429aba;
     --color-white: #fff;
-    --color-modal-backdrop: rgba(0, 0, 0, 0.4);
-    --color-gray-dark: #333;
-    --color-gray-mid: #555;
-    --color-gray: #666;
-    --color-gray-placeholder: #888;
-    --color-gray-border: #ccc;
-    --color-gray-track: #e0e0e0;
-    --color-gray-bg: #f0f0f0;
-    --color-gray-section: #f5f5f5;
-    --color-chip-bg: #ebecee;
-    --color-chip-pressed: #d8d9dc;
-    --color-border-light: #eee;
-    --color-toggle-inactive: #d0d0d0;
-    --color-dark-background: #131e33;
 
-    --bg: var(--color-dark-background);
-    --surface: #17243d;
-    --surface-muted: #1b2a45;
-    --border: #314566;
-    --text-primary: #f4f7ff;
-    --text-secondary: #c7d1e5;
-    --text-muted: #a4b3cf;
-    --overlay-backdrop: rgba(0, 0, 0, 0.55);
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg: var(--color-white);
-        --surface: var(--color-white);
-        --surface-muted: var(--color-gray-section);
-        --border: var(--color-gray-border);
-        --text-primary: var(--color-gray-dark);
-        --text-secondary: var(--color-gray);
-        --text-muted: var(--color-gray-mid);
-        --overlay-backdrop: var(--color-modal-backdrop);
-    }
+    --bg: #456cba;
+    --surface: #fff;
+    --surface-muted: #3a5ca8;
+    --border: #c5d0e4;
+    --border-on-blue: rgba(255, 255, 255, 0.25);
+    --text-primary: #333;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --text-on-blue: #e8efff;
+    --overlay-backdrop: rgba(0, 0, 0, 0.2);
 }
 
 body.rhyme-offline {
@@ -56,7 +31,7 @@ body.rhyme-offline {
     font-optical-sizing: auto;
     font-weight: 400;
     background-color: var(--bg);
-    color: var(--text-secondary);
+    color: var(--text-on-blue);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
@@ -85,7 +60,7 @@ body.rhyme-offline {
     font-family: inherit;
     font-size: 0.875rem;
     font-weight: 500;
-    color: var(--color-link);
+    color: var(--color-white);
     text-decoration: none;
     background: none;
     border: none;
@@ -94,13 +69,13 @@ body.rhyme-offline {
 }
 
 .rhyme-offline-back:hover {
-    color: var(--color-primary);
+    color: var(--text-on-blue);
     text-decoration: underline;
     text-underline-offset: 0.15em;
 }
 
 .rhyme-offline-back:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-white);
     outline-offset: 3px;
     border-radius: 0.25rem;
 }
@@ -113,27 +88,7 @@ body.rhyme-offline {
     text-align: center;
     margin-bottom: 1.5rem;
     letter-spacing: -0.02em;
-    background: linear-gradient(
-        135deg,
-        var(--text-primary) 0%,
-        var(--color-primary) 100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-@media (prefers-color-scheme: light) {
-    .rhyme-offline-title {
-        background: linear-gradient(
-            135deg,
-            var(--color-gray-dark) 0%,
-            var(--color-primary) 100%
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-    }
+    color: var(--color-white);
 }
 
 .rhyme-offline-card {
@@ -276,11 +231,7 @@ body.rhyme-offline {
     letter-spacing: 0.01em;
     text-decoration: none;
     color: var(--color-white);
-    background: linear-gradient(
-        135deg,
-        var(--color-primary) 0%,
-        var(--color-link) 100%
-    );
+    background-color: var(--color-primary);
     border: 1px solid transparent;
     border-radius: 0.625rem;
     box-shadow: 0 0.35rem 1.25rem var(--overlay-backdrop);
@@ -308,16 +259,16 @@ body.rhyme-offline {
     padding: 0.4rem 0.85rem;
     font-size: 0.8125rem;
     font-weight: 600;
-    color: var(--text-muted);
-    background-color: var(--surface-muted);
-    border: 1px solid var(--border);
+    color: var(--text-on-blue);
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid var(--border-on-blue);
     border-radius: 0.5rem;
 }
 
 .rhyme-offline-footer {
     flex-shrink: 0;
     padding: 1.25rem 1rem 1.75rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-on-blue);
     background-color: var(--surface-muted);
 }
 
@@ -348,13 +299,13 @@ body.rhyme-offline {
 }
 
 .rhyme-offline-footer-link:hover {
-    background-color: var(--surface-muted);
+    background-color: var(--surface);
     border-color: var(--color-primary);
     color: var(--color-primary);
 }
 
 .rhyme-offline-footer-link:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-white);
     outline-offset: 2px;
 }
 
