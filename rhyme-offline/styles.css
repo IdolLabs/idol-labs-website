@@ -206,18 +206,21 @@ body.rhyme-offline {
     font-weight: 600;
 }
 
-.rhyme-offline-legal a {
+.rhyme-offline-legal a,
+.rhyme-offline-support a:not(.rhyme-offline-donate-button) {
     color: var(--color-link);
     text-decoration: underline;
     text-underline-offset: 0.15em;
     transition: color 0.15s ease;
 }
 
-.rhyme-offline-legal a:hover {
+.rhyme-offline-legal a:hover,
+.rhyme-offline-support a:not(.rhyme-offline-donate-button):hover {
     color: var(--color-primary);
 }
 
-.rhyme-offline-legal a:focus-visible {
+.rhyme-offline-legal a:focus-visible,
+.rhyme-offline-support a:not(.rhyme-offline-donate-button):focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
     border-radius: 0.125rem;
@@ -236,6 +239,66 @@ body.rhyme-offline {
 
 .rhyme-offline-legal li::marker {
     color: var(--color-primary);
+}
+
+.rhyme-offline-support {
+    padding: 1.5rem 1.35rem 1.65rem;
+}
+
+.rhyme-offline-support-title {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 1.85rem);
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 1.15rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+}
+
+.rhyme-offline-donate-wrap {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.rhyme-offline-donate-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min(100%, 16rem);
+    padding: 1rem 2rem;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    color: var(--color-white);
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-link) 100%
+    );
+    border: 1px solid transparent;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.35rem 1.25rem var(--overlay-backdrop);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.rhyme-offline-donate-button:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 0.5rem 1.5rem var(--overlay-backdrop);
+}
+
+.rhyme-offline-donate-button:active {
+    transform: scale(0.98);
+}
+
+.rhyme-offline-donate-button:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 3px;
 }
 
 .rhyme-offline-footer-current {
@@ -298,7 +361,22 @@ body.rhyme-offline {
 @media (prefers-reduced-motion: reduce) {
     .rhyme-offline-back,
     .rhyme-offline-legal a,
+    .rhyme-offline-support a:not(.rhyme-offline-donate-button),
+    .rhyme-offline-donate-button,
     .rhyme-offline-footer-link {
         transition: none;
     }
+
+    .rhyme-offline-donate-button:active {
+        transform: none;
+    }
+}
+
+.rhyme-offline-support-thanks {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
 }
