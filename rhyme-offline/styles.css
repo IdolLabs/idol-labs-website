@@ -96,7 +96,8 @@ body.rhyme-offline {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 0.75rem 1rem;
+    gap: 1rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -133,6 +134,23 @@ body.rhyme-offline {
 
 .rhyme-offline-card p + p {
     margin-top: 1rem;
+}
+
+.rhyme-offline-card a:not(.rhyme-offline-donate-button) {
+    color: var(--color-link);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+    transition: color 0.15s ease;
+}
+
+.rhyme-offline-card a:not(.rhyme-offline-donate-button):hover {
+    color: var(--color-primary);
+}
+
+.rhyme-offline-card a:not(.rhyme-offline-donate-button):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 0.125rem;
 }
 
 .rhyme-offline-legal {
@@ -338,6 +356,7 @@ body.rhyme-offline {
 
 @media (prefers-reduced-motion: reduce) {
     .rhyme-offline-back,
+    .rhyme-offline-card a:not(.rhyme-offline-donate-button),
     .rhyme-offline-legal a,
     .rhyme-offline-support a:not(.rhyme-offline-donate-button),
     .rhyme-offline-donate-button,
