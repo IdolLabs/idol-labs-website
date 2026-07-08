@@ -21,12 +21,10 @@
     --text-muted: #888;
     --text-on-blue: #e8efff;
     --overlay-backdrop: rgba(0, 0, 0, 0.2);
-    --footer-height: 6rem;
 }
 
 html:has(body.rhyme-offline) {
     min-height: 100%;
-    background-color: var(--surface-muted);
 }
 
 body.rhyme-offline {
@@ -37,13 +35,7 @@ body.rhyme-offline {
     font-family: "Noto Sans JP", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
-    background: linear-gradient(
-        to bottom,
-        var(--bg) 0,
-        var(--bg) calc(100% - var(--footer-height)),
-        var(--surface-muted) calc(100% - var(--footer-height)),
-        var(--surface-muted) 100%
-    );
+    background-color: var(--bg);
     color: var(--text-on-blue);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -366,17 +358,6 @@ body.rhyme-offline {
     background-color: var(--surface-muted);
 }
 
-.rhyme-offline-footer::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -100vh;
-    height: 100vh;
-    background-color: var(--surface-muted);
-    pointer-events: none;
-}
-
 .rhyme-offline-footer-nav {
     display: flex;
     flex-wrap: wrap;
@@ -412,6 +393,23 @@ body.rhyme-offline {
 .rhyme-offline-footer-link:focus-visible {
     outline: 2px solid var(--color-white);
     outline-offset: 2px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    html:has(body.rhyme-offline) {
+        background-color: var(--surface-muted);
+    }
+
+    .rhyme-offline-footer::after {
+        content: "";
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: -100vh;
+        height: 100vh;
+        background-color: var(--surface-muted);
+        pointer-events: none;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
