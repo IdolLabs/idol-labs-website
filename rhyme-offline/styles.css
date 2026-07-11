@@ -26,6 +26,18 @@
 html:has(body.rhyme-offline) {
     min-height: 100%;
     background-color: var(--surface-muted);
+    animation: rhyme-offline-scroll-bg linear both;
+    animation-timeline: scroll();
+}
+
+@keyframes rhyme-offline-scroll-bg {
+    from {
+        background-color: var(--bg);
+    }
+
+    to {
+        background-color: var(--surface-muted);
+    }
 }
 
 body.rhyme-offline {
@@ -40,6 +52,7 @@ body.rhyme-offline {
     color: var(--text-on-blue);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    overscroll-behavior-x: none;
 }
 
 .rhyme-offline-main {
@@ -359,17 +372,6 @@ body.rhyme-offline {
     background-color: var(--surface-muted);
 }
 
-.rhyme-offline-footer::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -100vh;
-    height: 100vh;
-    background-color: var(--surface-muted);
-    pointer-events: none;
-}
-
 .rhyme-offline-footer-nav {
     display: flex;
     flex-wrap: wrap;
@@ -408,6 +410,11 @@ body.rhyme-offline {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    html:has(body.rhyme-offline) {
+        animation: none;
+        background-color: var(--bg);
+    }
+
     .rhyme-offline-back,
     .rhyme-offline-card a:not(.rhyme-offline-donate-button),
     .rhyme-offline-legal a,
